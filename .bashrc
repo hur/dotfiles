@@ -121,3 +121,21 @@ fi
 # neofetch
 # disabled due to being slow
 alias dotfiles='/usr/bin/git --git-dir=/home/atte/.dotfiles/ --work-tree=/home/atte'
+
+source /home/atte/Documents/code/exercism-auto-cd/exercism-dl.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/atte/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/atte/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/atte/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/atte/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
