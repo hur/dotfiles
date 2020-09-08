@@ -31,5 +31,5 @@ end
 
 set fish_greeting
 
-source /home/atte/Documents/code/exercism-auto-cd/exercism-dl-fish.sh
+source /home/atte/Documents/github/exercism-cd-on-dl/exercism-dl-fish.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
