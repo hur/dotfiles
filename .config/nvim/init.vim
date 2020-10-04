@@ -17,7 +17,7 @@ set t_Co=256                            " Support 256 colors
 set showtabline=2                       " Always show tabs
 " use a python virtualenv for nvim (so coc-python works well)
 let g:python3_host_prog = '/home/atte/.config/nvim/neovim3/bin/python3'
-let g:python3_host_prog = '/home/atte/.config/nvim/neovim2/bin/python'
+let g:python_host_prog = '/home/atte/.config/nvim/neovim2/bin/python'
 "specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
