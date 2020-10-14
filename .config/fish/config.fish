@@ -33,3 +33,4 @@ set fish_greeting
 
 source /home/atte/Documents/github/exercism-cd-on-dl/exercism-dl-fish.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+bass source /opt/ros/foxy/setup.bash
