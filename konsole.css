@@ -1,0 +1,22 @@
+QTabBar {
+	background: #282828;
+}
+
+Konsole--TerminalHeaderBar {
+	max-height:0;
+	max-width:0;
+}
+
+Konsole--ViewSplitter {
+    background-color: "#32302f";
+}
+
+QTabBar::tab {
+	background: #282828;
+	color: #fabd2f;
+}
+
+QTabBar::tab:selected {
+	color: #fe8019;
+}
+
