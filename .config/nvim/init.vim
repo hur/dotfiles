@@ -34,10 +34,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'KeitaNakamura/tex-conceal.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'rust-lang/rust.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 "Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
@@ -74,11 +76,21 @@ tnoremap <Esc> <C-\><C-n>
 " enter insert mode automatically when entering terminal
 autocmd BufWinEnter,WinEnter term://* startinsert
 
+" Fix indent on paste
+:nnoremap p p=`]
+" Normal paste on ctrl-p
+:nnoremap <c-p> p
+
 " Terminal resizing using control+arrows
 :nnoremap <silent> <c-Up> :resize -1<CR>
 :nnoremap <silent> <c-Down> :resize +1<CR>
 :nnoremap <silent> <c-left> :vertical resize -1<CR>
 :nnoremap <silent> <c-right> :vertical resize +1<CR>
+
+"keep visual mode after indent
+vnoremap > >gv
+vnoremap < <gv
+
 " CoC.nvim
 
 " TextEdit might fail if hidden is not set.
