@@ -18,18 +18,18 @@ set showtabline=2                       " Always show tabs
 " use a python virtualenv for nvim (so coc-python works well)
 let g:python3_host_prog = '/home/atte/.config/nvim/neovim3/bin/python3'
 let g:python_host_prog = '/home/atte/.config/nvim/neovim2/bin/python'
+" Fix coc with node and neovim installed from snap
 "specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 " Make sure you use single quotes
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
-Plug 'lervag/vimtex'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'lervag/vimtex'
+"Plug 'jiangmiao/auto-pairs'
 "Plug 'SirVer/ultisnips'
 Plug 'KeitaNakamura/tex-conceal.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -155,6 +155,19 @@ else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
@@ -180,8 +193,7 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
+let g:airline_symbols.whitespace = 'Ξ' 
 " airline symbols
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''

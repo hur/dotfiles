@@ -20,3 +20,7 @@ QTabBar::tab:selected {
 	color: #fe8019;
 }
 
+QTabBar::tab:selected
+{
+    font-weight: bold;
+} 

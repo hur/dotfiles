@@ -31,6 +31,10 @@ end
 
 set fish_greeting
 
+eval (dircolors -c ~/.dircolors/gruvbox.dircolors)
+
 source /home/atte/Documents/github/exercism-cd-on-dl/exercism-dl-fish.sh
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 bass source /opt/ros/foxy/setup.bash
+alias eufs_ide='bass source ~/Documents/eufs/eufs-master/install/setup.bash && bass nohup /opt/clion-2020.2.3/bin/clion.sh &'
+alias vim="nvim"
